@@ -1,0 +1,12 @@
+
+#include <stdio.h>
+
+int main() {
+	int f = 16;
+	double f, result;
+	f =16;
+	// please square root f's value
+	result = sqrt f;
+	printf("%d", result);
+	return 0;
+}
