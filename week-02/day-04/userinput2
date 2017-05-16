@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    char buffer[255];   // Buffer variable for user input
+
+    //TODO:
+    // Get the user's name with gets
+
+    puts("Whats your name?");
+
+    //TODO:
+    // Print it out with puts
+    gets(buffer);
+
+
+
+    //TODO:
+    // Get the user's pet name with getch
+    puts("Whats your pets name?");
+
+    //TODO:
+    // Print it out
+    gets(buffer);
+
+    return 0;
+}

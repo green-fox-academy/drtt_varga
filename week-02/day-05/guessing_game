@@ -1,0 +1,24 @@
+# include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+   int randomNo, input;
+
+   randomNo = rand()%100 + 1;
+   printf("%d", randomNo);
+
+   printf("Enter a number from 1 to 100\n");
+
+   do{
+
+    scanf("%d", &input);
+
+    if(randomNo>input){
+        printf("Your number is low");
+
+    }else if(randomNo<input){
+        printf("Your number is high");
+    }
+   }while(randomNo != input);
+       printf("You win!");
+}

@@ -1,0 +1,32 @@
+# include <stdio.h>
+#include <string.h>
+
+int main(){
+
+    creat_palindrom();
+
+return 0;
+}
+
+
+void creat_palindrom(){
+
+      int i;
+      char buffer[50]  = {0};
+
+      puts("Write something:");
+      gets(buffer);
+      printf("%s",buffer);
+
+
+      int length;
+      length = strlen(buffer);
+
+      for (i = length ; i >=0 ; i--){
+
+            printf("%c", buffer[i]);
+
+
+
+    }
+}
