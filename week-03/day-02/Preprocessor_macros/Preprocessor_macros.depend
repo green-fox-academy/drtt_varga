@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1494935201 source:c:\users\drtt\desktop\greenfox\drtt_varga\week-03\day-02\preprocessor_macros\main.c
+	<stdio.h>
+	<stdlib.h>
+
