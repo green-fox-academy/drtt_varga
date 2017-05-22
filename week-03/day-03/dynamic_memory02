@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// TODO:
+// Please create a program that asks for a count when it starts.
+// It should ask for a number count times, then it shoud print the average of the numbers.
+// It should delete any dynamically allocated resource before the program exits.
+
+int main() {
+    int i, count;
+  int total;
+  float average = 0.0;
+  int* pointsArray;
+
+  printf("How many numbers do you want to average? \n");
+  scanf(" %d", &count);
+
+  pointsArray = (int*) malloc(count * sizeof(int));
+
+  printf("Enter numbers: \n");
+
+  for(i= 0; i < count; i++){
+    scanf("%d", &pointsArray[i]);
+    total += pointsArray[i];
+  }
+    average = (float)total / (float)count;
+    printf("Average is %f", average);
+
+  return 0;
+}

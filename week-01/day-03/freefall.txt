@@ -1,0 +1,7 @@
+basic.forever(() => {
+    if (Math.abs(input.acceleration(Dimension.Z)) < 500) {
+        basic.showNumber(Math.abs(input.acceleration(Dimension.Z)))
+    } else {
+        basic.showNumber(0)
+    }
+})
