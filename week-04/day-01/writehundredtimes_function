@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void do_while_function();
+void for_loop_function();
+void while_loop_fuction();
+
+int i = 1;
+
+int main () {
+
+
+    while_loop_fuction();
+
+return 0;
+
+}
+
+void do_while_function(){
+
+    do {
+        printf("\n %d I wont cheat on the test!\n", i++);
+    } while (i <= 100);
+
+}
+
+void for_loop_function(){
+
+    for (i = 1; i <= 100; i++){
+
+        printf("\n %d I wont cheat on the test!\n", i);
+    }
+}
+
+void while_loop_fuction(){
+
+    while (i <= 100){
+
+        printf("\n %d I wont cheat on the test!\n", i++);
+    }
+}

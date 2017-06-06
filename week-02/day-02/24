@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdint.h>
+
+int main() {
+	uint8_t ae = 4;
+	// print "yeeeeeeeey" ae times
+
+	int i = ae -1;
+
+	for (ae = 0; ae <= i; ae++) {
+
+        printf("yeeeeeey\n", ae);
+	}
+	return 0;
+}

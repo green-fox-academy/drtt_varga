@@ -1,0 +1,166 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <limits.h>
+#define MAX_TODO_NAME_LEN   256
+struct todo {
+    char name[MAX_TODO_NAME_LEN];
+    int checked;
+};
+//ezzel a struktúrával lesz egy olyan adatszerkezetünk amiben eltárolunk egy todo tömböt és annak hoszsát (a fenti struktúrát rakjuk a tömbbe)
+struct todostorage {
+    struct todo *array;
+    int length;
+};
+void print_usage()
+{
+    clear_screen();
+    printf("Todo application\n");
+    printf("====================\n");
+    printf("Commands:\n");
+    printf(" -a   Adds a new task\n");
+    printf(" -wr  Write current todos to file\n");
+    printf(" -rd  Read todos from a file\n");
+    printf(" -l   Lists all the tasks\n");
+    printf(" -e   Empty the list\n");
+    printf(" -c   Completes a task\n");
+}
+void clear_screen()
+{
+    system("cls");
+}
+int list_todo(struct todostorage *storage)
+{
+    clear_screen();
+    printf("List by number\n");
+    printf("====================\n");
+    printf("Num - Tasks - Prio\n");
+    for (int i = 0; i < storage->length; i++) {
+        printf("%d - [", i + 1);
+        if (storage->array[i].checked)
+            printf("x] ");
+        else
+            printf(" ] ");
+        printf("%s\n", storage->array[i].name);
+    }
+    return 0;
+}
+void print_empty()
+{
+    clear_screen();
+    printf("No todos for today! :)\n");
+}
+int add_todo(struct todostorage *storage, char *name, int checked)
+{
+    // If the storage is empty allocate memory, else reallocate
+    if (storage->array == NULL || storage->length == 0) {
+        storage->array = (struct todo *)malloc(sizeof(struct todo));
+    } else {
+        int size_in_bytes = sizeof(struct todo) * (storage->length + 1);
+        storage->array = (struct todo *)realloc(storage->array, size_in_bytes);
+    }
+    storage->length++;
+    // Put name into the new todo's name member
+    int index = storage->length - 1;
+    strcpy(storage->array[index].name, name);
+    // Initialize other members
+    storage->array[index].checked = checked;
+    return 0;
+}
+int write_todo(struct todostorage *storage, char *path)
+{
+    // open file
+    FILE *file = fopen(path, "w");
+    // Write data to file
+    for (int i = 0; i < storage->length; i++) {
+        fprintf(file, "%s %d\n", storage->array[i].name, storage->array[i].checked);
+    }
+    fclose(file);
+    return 0;
+}
+int read_todo(struct todostorage *storage, char *path)
+{
+    // open file
+    FILE *file = fopen(path, "r");
+    char name[MAX_TODO_NAME_LEN];
+    int checked, prio;
+    while (fscanf(file, "%s %d %d\n", name, &checked) == 2) {
+        add_todo(storage, name, checked);
+    }
+    fclose(file);
+    return 0;
+}
+int empty_todo(struct todostorage *storage)
+{
+    free(storage->array);
+    storage->array = NULL;
+    storage->length = 0;
+    return 0;
+}
+int check_todo(struct todostorage *storage, int num)
+{
+    if (storage->array[num - 1].checked == 0)
+        storage->array[num - 1].checked = 1;
+    else
+        storage->array[num - 1].checked = 0;
+    return 0;
+}
+char *parser(char *command, char *token, int substring)
+{
+    // Get parameter
+    char *p;
+    for (int i = 0; i < substring; i++) {
+        if (i == 0 && command != NULL)
+            p = strtok(command, token);
+        else
+            p = strtok(NULL, token);
+    }
+    return p;
+}
+int main()
+{
+    //inicializáljuk a tárolónkat, ami
+    struct todostorage storage = {NULL, 0};
+    print_usage();
+    char command[256];
+    while (1) {
+        // Get command string
+        gets(command);
+        // Search for command
+        if (strstr(command, "-a") != NULL) {
+            char todo_name[256];
+            // Copy the todo name
+            char *p = parser(command, "\"", 2);
+            strcpy(todo_name, p);
+            // Add todo
+            add_todo(&storage, todo_name, 0);
+        } else if (strstr(command, "-wr") != NULL) {
+            char filename[256];
+            // Copy the filename
+            strcpy(filename, parser(command, "\"", 2));
+            // Save to file
+            write_todo(&storage, filename);
+        } else if (strstr(command, "-rd") != NULL) {
+            char filename[256];
+            // Copy the filename
+            strcpy(filename, parser(command, "\"", 2));
+            // Save to file
+            read_todo(&storage, filename);
+        } else if (strstr(command, "-e") != NULL) {
+            // Empty the storage
+            empty_todo(&storage);
+            print_empty();
+        } else if (strstr(command, "-c") != NULL) {
+            char number[256];
+            // Get the number
+            char *p = parser(command, " ", 2);
+            strcpy(number, p);
+            // Convert string to number
+            char *ptr;
+            int num = strtol(number, &ptr, 10);
+        } else if (strstr(command, "-l") != NULL) {
+            list_todo(&storage);
+        }
+    }
+    return 0;
+}

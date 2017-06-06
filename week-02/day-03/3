@@ -1,22 +1,19 @@
 #include <stdio.h>
- float piGenerator ();
+
 /* Write a non void function which returns the value of PI, so the following number:
 3.14159
 Try it out in the main function by printing out the result of the pi generator function!
 */
 
-
-  float piGenerator(){
-      float a = 3.14159;
-      return a;
-
-  }
-
+float piGenerator();
 
 int main(){
 
-    float pi = piGenerator();
-    printf("%.5f\n", pi);
-
+    float result = piGenerator();
+    printf("%.5f\n", result);
     return 0;
+}
+
+float piGenerator(){
+    return 3.14159;
 }

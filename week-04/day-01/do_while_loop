@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main () {
+
+    int i = 1;
+    do {
+        printf("\n %d I wont cheat on the test!\n", i++);
+    } while (i <= 100);
+
+return 0;
+
+}

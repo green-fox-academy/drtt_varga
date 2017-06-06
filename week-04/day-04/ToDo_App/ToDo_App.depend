@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1495726299 source:c:\users\drtt\desktop\greenfox\drtt_varga\week-04\day-04\todo_app\main.c
+	<stdio.h>
+	<stdlib.h>
+

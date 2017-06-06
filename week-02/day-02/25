@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+	// print the even numbers till 20
+	int n,
+	times = 20 ;
+
+	for (n = 0; n<= times; n = n + 2) {
+    printf("%d\n", n);
+}
+	return 0;
+}
+
+//other solution:
+
+#include <stdio.h>
+
+int main() {
+	// print the even numbers till 20
+	int i = 0;
+	while (i <=20){
+        if(i % 2 == 0)
+            printf("%d\n", i);
+        i++;
+	}
+	return 0;
+}

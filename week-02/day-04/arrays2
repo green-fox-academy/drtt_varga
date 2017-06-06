@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 int main() {
-    char char_array[] = {'a', 'b', 'c', 'd'};
+    char char_array[] = {'a', 'b', 'c', 'd','\0'};
     char char_array_the_same[] = "abcd";
 
 	//TODO:
     // Print out the two arrays character-by-character
+    printf("%s \n", char_array);
 
-    for(int i = 0; i < 4; i ++){
+    for (int i = 0; i < 4; i ++) {
 
-        printf("%c \n", char_array [i], char_array_the_same [i] );
+        printf("%c %c \n", char_array [i], char_array_the_same[i]);
 
     }
-
 	//TODO:
     // What is the difference between the arrays?
 

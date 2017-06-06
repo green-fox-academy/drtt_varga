@@ -1,10 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdio.h>
 
-
-
-void TotoroLogoPrinter();
 /* Write a void function which can print the following text on the screen:
 ------------
 -- TOTORO --
@@ -13,18 +8,21 @@ void TotoroLogoPrinter();
 ------------
 Name this function as "TotoroLogoPrinter" and call it from the main function!*/
 
+void TotoroLogoPrinter();
+
+int main(){
+
+    TotoroLogoPrinter();
+
+    return 0;
+}
+
 void TotoroLogoPrinter(){
     printf("----------\n");
     printf("--TOTORO--\n");
+    printf("----------\n");
     printf("-GREENFOX-\n");
     printf("----------\n");
 
-    return ;
-
-}
-
-int main(){
-      TotoroLogoPrinter();
-
-    return 0;
+    return;
 }

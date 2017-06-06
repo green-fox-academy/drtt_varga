@@ -1,0 +1,19 @@
+#include <string.h>
+
+/*
+Add two numbers using pointers
+*/
+
+int main()
+{
+
+    int a  = 20;
+    int b = 17;
+    int result = a + b;
+
+    int *add_pointer = &result;
+
+    printf("%d \n", *add_pointer);
+
+    return 0;
+}
