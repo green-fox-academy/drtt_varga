@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1496763008 source:c:\users\drtt\desktop\greenfox\drtt_varga\week-06\debugging\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+

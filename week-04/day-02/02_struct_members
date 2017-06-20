@@ -15,7 +15,7 @@ int main()
     comp.bits = 64;
 
     //TODO: print out the structure members
-    printf("%f, %d, %d", comp.cpu_speed_GHz, comp.ram_size_GB, comp.bits);
+     printf("CPU speed: %.1f GHz\nRAM: %d GB\nbits: %d\n", comp.cpu_speed_GHz, comp.ram_size_GB, comp.bits);
 
     return 0;
 }

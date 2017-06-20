@@ -59,18 +59,43 @@
  *
  * Don't forget to handle invalid inputs (NULL pointers, invalid values etc.)
  */
+enum pokemon_type {normal, fire, water, electric, grass, ice, fighting, poision, ground, flying, psychic, bug, rock, ghost, dragon, dark, steel, fairy};
 
- struct pokemon {
+struct pokemon {
     char name[255];
     int age;
     float strength;
     float speed;
-    enum type {normal, fire, water, electric, grass, ice, fighting, poision, ground, flying, psychic, bug, rock, ghost, dragon, dark, steel, fairy};
-    enum type poke_type;
+    enum pokemon_type type;
  };
 
+ int get_faster (struct pokemon* poke, int array_length, int speed2)
+{
+    int count = 0;
 
+
+    for (int i = 0; i < array_length; i++) {
+        if (poke[i].speed > speed2) {
+
+            count++;
+        }
+    }
+
+   return count;
+
+}
 
 int main() {
+
+   struct pokemon poke1 = {"Pokemon1", 3, 2, 6, fire};
+   struct pokemon poke2 = {"Pokemon2", 3, 2, 5, fire};
+   struct pokemon poke3 = {"Pokemon3", 3, 2, 7, fire};
+   struct pokemon poke_array[3];
+   poke_array[0] = poke1;
+   poke_array[1] = poke2;
+   poke_array[2] = poke3;
+    int array_length = sizeof(poke_array) / sizeof(poke_array[0]);
+    printf("Faster than: %d", get_faster(poke_array, array_length, 4));
+
     return 0;
 }

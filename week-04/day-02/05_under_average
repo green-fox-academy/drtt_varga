@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// TODO:
+// Create a function that takes a double array as a parameter, and the length of the array.
+// This function should calculate the avarage of the elements.
+void average();
+void under_average();
+
+
+// TODO:
+// Create an other function that takes a double array as a parameter, and the length of the array.
+// It calculates how much elements are under the avarage, and returns with that.
+
+// TODO:
+// Create an other function that takes a double array as a parameter, and the length of the array.
+// It allocates a new array, and loads into it the elements which are under the average.
+// It returns a pointer to the new array.
+
+int main () {
+
+    double array[] = {5.5, 4.5, 3.5, 8.6, 7.6, 9.6};
+    int n = sizeof(array) / sizeof(array[0]);
+
+    for (int i = 0; i < n; i++){
+
+        printf("%.1f ", array[i]);
+}
+    return 0;
+}
+
+void average() {
+
+}

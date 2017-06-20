@@ -1,16 +1,18 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     char my_name_array[] = "My Name";
 
-
-    for(int i = 0; i < 7; i ++){
-
-        printf("%c\n", my_name_array [i]);
-    }
-
-	//TODO:
+    //TODO:
     // Print out the array character-by-character
+
+    int n = sizeof(my_name_array); // or int n = sizeof(my_name_array[0];
+
+    for (int i = 0; i < n; i++) {
+
+        printf("%c", my_name_array[i]);
+    }
 
     return 0;
 }
