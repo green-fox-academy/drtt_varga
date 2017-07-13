@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1498651396 source:c:\users\drtt\desktop\greenfox\drtt_varga\week-09\server\server\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<winsock2.h>
+	<conio.h>
+	<math.h>
+

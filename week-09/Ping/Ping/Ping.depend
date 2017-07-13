@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1498651213 source:c:\users\drtt\desktop\greenfox\drtt_varga\week-09\ping\ping\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<winsock2.h>
+

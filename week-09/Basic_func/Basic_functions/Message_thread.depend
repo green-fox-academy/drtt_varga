@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1498728823 source:c:\users\drtt\desktop\greenfox\drtt_varga\week-09\basic_func\basic_functions\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	<conio.h>
+	<math.h>
+
