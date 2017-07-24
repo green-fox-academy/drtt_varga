@@ -8,7 +8,7 @@
 #include "app_ethernet.h"
 #include "lwip/sockets.h"
 #include "stm32746g_discovery_ts.h"
-#define SERVER_PORT
+#define SERVER_PORT 54545
 #define SERVER_IP
 
 
