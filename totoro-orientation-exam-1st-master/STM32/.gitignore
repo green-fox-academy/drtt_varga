@@ -1,0 +1,10 @@
+Documentation/*
+package.xml
+Release_Notes.html
+_htmresc/*
+*.txt
+Projects/*/GreenFox/*/SW4STM32/*
+!.cproject
+!.project
+!*.ld
+!*.s
