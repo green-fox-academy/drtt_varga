@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 /* Write a void function which can print the following text on the screen:
 ------------
 -- TOTORO --
