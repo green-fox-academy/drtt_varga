@@ -8,7 +8,7 @@ The totoro operation does the following on two variables (let's say we have "a"
 result = a*b+(a+b)+a*a*a+b*b*b+3.14159265358979
 */
 
-void totoro_operation(float, float);
+void totoro_operation(float c, float d);
 
 int main(){
     float c = 2.0;
