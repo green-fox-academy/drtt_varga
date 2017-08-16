@@ -6,10 +6,9 @@ int main() {
     //TODO:
     // The "number_pointer" should point to the third element of the array called "numbers",
     // than please print its value with it. Solve the problem without reusiong the "&" operator
-    // for geting the address of the third element.
-
-
-    printf(" %d \n", *numbers + 2);
+    // for geting the address of the third element
+    
+    printf(" %d \n", *(numbers + 2));
 
     return 0;
 }
