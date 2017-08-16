@@ -5,36 +5,29 @@ The funtion than returns the "xth" fibonaci number.
 What the hack is a fibonacci number? Search it on wikipedia!
 */
 
-int fibonacci(int);
+int fibonacci(int n);
 
-int main(){
+int main ()
+{
 
-    int xth_fib_num = fibonacci(6);
-	printf("%d", xth_fib_num);
+   int n = 8;
+   int c = fibonacci(n);
 
+   printf("%d", c);
 
     return 0;
 }
 
-int fibonacci(int x){
+int fibonacci(int n)
+{
+    int prev_num1 = 0;
+   int prev_num2 = 1;
+   int c = 0;
 
-    int fibo_x_minus_2 = 0;
-    int fibo_x_minus_1 = 1;
-    int fibo_x = 0;
-
-    if(x < 1){
-        return -1;
-    }else if (x == 1) {
-        return 0;
-    }else if (x ==2){
-        return 1;
-    }else {
-        for(int i = 0; i< (x-2); i++){
-
-            fibo_x = fibo_x_minus_1 + fibo_x_minus_2;
-            fibo_x_minus_2 = fibo_x_minus_1;
-            fibo_x_minus_1 = fibo_x;
-        }
-        return fibo_x;
-    }
+   for (int i = 3; i <= n; i++) {
+        c = prev_num1 + prev_num2;
+        prev_num1 = prev_num2;
+        prev_num2 = c;
+   }
+   return c;
 }
