@@ -7,20 +7,20 @@ int main() {
     // Get the user's name with gets
 
     puts("Whats your name?");
+    gets(buffer);
 
     //TODO:
     // Print it out with puts
-    gets(buffer);
-
-
+    puts(buffer);
 
     //TODO:
-    // Get the user's pet name with getch
+    // Get the user's pet name with gets
     puts("Whats your pets name?");
+    gets(buffer);
 
     //TODO:
     // Print it out
-    gets(buffer);
+    puts(buffer);
 
     return 0;
 }
