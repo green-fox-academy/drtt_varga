@@ -5,20 +5,28 @@ void main(){
    int randomNo, input;
 
    randomNo = rand()%100 + 1;
-   printf("%d", randomNo);
+   //printf("%d", randomNo);
 
    printf("Enter a number from 1 to 100\n");
 
-   do{
+
+for (int i = 0; i < 5; i++) {
 
     scanf("%d", &input);
 
-    if(randomNo>input){
-        printf("Your number is low");
+    if(randomNo>input && i < 4)  {
+        printf("Your number is low\n");
 
-    }else if(randomNo<input){
-        printf("Your number is high");
-    }
-   }while(randomNo != input);
+    }else if(randomNo<input && i < 4){
+        printf("Your number is high\n");
+
+    }else if(randomNo == input && i < 4){
        printf("You win!");
+       break;
+    }
+   else if (i == 4) {
+    printf("You lose!");
+   }
 }
+}
+
